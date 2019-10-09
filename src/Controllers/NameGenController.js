@@ -1,6 +1,6 @@
 const axios = require("axios")
 const express = require('express')
-const nameList = require("../../assets/names.json")
+const nameList = require("../assets/names.json")
 
 function generateName( ){
 
@@ -35,7 +35,7 @@ module.exports = {
     generateNameList(req, res){
         const names = []
         const { listSize } = req.headers
-        
+
         for(i = 0, i < listSize, i++){
             const name = generateName()
             const availability = validateDomain(name)
